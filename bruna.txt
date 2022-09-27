@@ -1,0 +1,3 @@
+Bruna Leitão
+
+Sou entusiasta de tecnologia, adoro descobrir e aprender coisas novas. Atualmente estudo Desenvolvimento de Software Multiplataforma na Fatec Professor Miguel Reale. Meu foco principal tem sido aprimorar meus conhecimentos na linguagem Java e nos conceitos de POO, além da utilização do framework Spring Boot. Desenvolvi alguns projetos utilizando Java, HTML, CSS e JavaScript. Caso queira ver os meus projetos, acesse o meu Github: https://github.com/brunacr
