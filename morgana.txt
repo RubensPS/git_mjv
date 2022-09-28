@@ -3,6 +3,7 @@ email: morganaramos@edu.unifor.br
 Sobre mim:
 Após mais de 10 anos de carreira na área de educação, resolvi migrar para TI. Deixei o medo de lado e segui minha paixão pela tecnologia. Tenho conhecimentos em pesquisa acadêmica, planejamento e execução de projetos. Amo aprender e ensinar. 
 
+============================
 Elise pergunta: Morg, em que cidade vc mora?
 
 Elise pergunta: Prefere frio ou calor?
