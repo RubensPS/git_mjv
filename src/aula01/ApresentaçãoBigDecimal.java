@@ -48,12 +48,14 @@ public class ApresentaçãoBigDecimal {
         BigDecimal A = new BigDecimal("0.03"); // Construtor String
         BigDecimal B = new BigDecimal(0.03d); //Construtor double
         BigDecimal C = BigDecimal.valueOf(0.03); //método estático convertendo double. Forma correta a partir de tipos diferentes de String
-        BigDecimal D = new BigDecimal("0.123456", MathContext.DECIMAL32); //Construtor com dois parâmetros, sendo o segundo para definição de casas decimais e forma de arredondamento
+        BigDecimal D = new BigDecimal("0.123445654754756", MathContext.DECIMAL32); //Construtor com dois parâmetros, sendo o segundo para definição de casas decimais e forma de arredondamento
 
         System.out.println("---------------------------------------------------------------------------------------");
         System.out.println("Exemplo de porque não instanciar por outros tipos usando construtor:");
+        System.out.println("Valor por parâmetro String: " + A);
         System.out.println("Valor por new BigDecimal(double valor): " + B);
         System.out.println("Valor por BigDecimal.valueOf(double valor): " + C);
+        System.out.println("Valor com casas definidas (7): " + D);
         System.out.println("---------------------------------------------------------------------------------------");
         scanner.nextLine();
         /*
@@ -103,7 +105,7 @@ public class ApresentaçãoBigDecimal {
         System.out.println("Divisão com BigDecimal. Casas decimais definidas em 7: " + bd6.divide(bd5, MathContext.DECIMAL32));
         System.out.println("Divisão com BigDecimal. Casas decimais não definidas");
         try {
-            System.out.println(B.divide(A));
+            System.out.println(bd6.divide(bd5));
         } catch (ArithmeticException e) {
             System.out.println("Erro - dízima periódica");
             e.printStackTrace();

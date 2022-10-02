@@ -36,9 +36,16 @@ Exemplos:
 - BigDecimal A = new BigDecimal("0.03") -> Construtor String
 - BigDecimal B = new BigDecimal(0.03d) -> Construtor double
 - BigDecimal C = BigDecimal.valueOf(0.03) -> Método estático convertendo double. Forma correta a partir de tipos diferentes de String
-- BigDecimal D = new BigDecimal("0.123456", MathContext.DECIMAL32) -> Construtor com dois parâmetros, sendo o segundo para definição de casas decimais e forma de arredondamento
+- BigDecimal D = new BigDecimal("0.123445654754756", MathContext.DECIMAL32) -> Construtor com dois parâmetros, sendo o segundo para definição de casas decimais e forma de arredondamento
 
-![exemplo-construtores](src/resources/exemplo_construtores.webp)
+Mostrando cada valor no terminal temos:
+
+![exemplo-construtores](src/resources/exemplo_construtores.png)
+
+<u>Curiosidade</u>:<br>
+Existem vários tipos de arredondamentos que podem ser utilizados ao construir o objeto,
+a partir do ENUM RoundingMode ou da classe MathContext, entre eles o HALF_EVEN, que é o
+padrão utilizado pelo BC para operações financeiras (ABNT 5891).
 
 ### Métodos oferecidos pela classe e métodos principais:<br>
 A classe BigDecimal nos oferece as seguintes operações:
@@ -49,12 +56,8 @@ A classe BigDecimal nos oferece as seguintes operações:
 - hashing;
 - conversão de tipos.
 
-<u>Curiosidade</u>:<br>
-Existem vários tipos de arredondamentos que podem ser utilizados ao construir o objeto,
-a partir do ENUM RoundingMode ou da classe MathContext, entre eles o HALF_EVEN, que é o
-padrão utilizado pelo BC para operações financeiras (ABNT 5891).
-
 Vamos apresentar aqui três métodos mais utilizados e alguns problemas que podem surgir:<br>
+
 <u>Método subtract();</u>
 - realiza operações de subtração entre dois objetos BigDecimal;
 - Retorna um BigDecimal cujo valor é a subtração entre o valor da instância que chamou o método e o valor passado como parâmetro.
@@ -68,15 +71,25 @@ Aproveitamos o exemplo para mostrar a diferença de precisão de operações ent
 - BigDecimal bd3 = new BigDecimal(0.03);
 - BigDecimal bd4 = new BigDecimal(0.02);
 
+Execução:
+- (a-b)
+- bd1.subtract(bd2)
+- bd3.subtract(bd4)
+
 ![exemplo-subtract](src/resources/exemplo_subtract.webp)
 
 <u>Método divide():</u>
 - Realiza operações de divisão entre dois objetos BigDecimal;
-- Retorna um BigDecimal cujo valor é a divisão entre o valor da instância que chamou o método e o valor passado como parâmetro.
+- Retorna um BigDecimal cujo valor é a divisão entre o valor da instância que chamou o método e o valor passado como parâmetro;
+- Há sobrecarga de métodos, podendo ser passado como segundo parâmetro um MathContext.
 
 Aproveitamos o exemplo para trazer o problema de utilizar esse método sem definir as casas decimais.
 - BigDecimal bd5 = new BigDecimal("0.03");
 - BigDecimal bd6 = new BigDecimal("0.02");
+
+Execução:
+- bd6.divide(bd5, MathContext.DECIMAL32)
+- bd6.divide(bd5)
 
 ![exemplo-devide](src/resources/exemplo_divide.webp)
 
@@ -92,5 +105,10 @@ o que pode gerar erros mesmo com números que são, de fato iguais.
 - BigDecimal bd7 = new BigDecimal("0.03");
 - BigDecimal bd8 = new BigDecimal("0.02");
 - BigDecimal bd9 = new BigDecimal("0.030");
+
+Execução:
+- bd7.equals(bd9)
+- bd7.compareTo(bd9)
+- bd7.compareTo(bd8)
 
 ![exemplo-compareTo](src/resources/exemplo_compareTo.png)
