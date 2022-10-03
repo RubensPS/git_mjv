@@ -112,3 +112,32 @@ Execução:
 - bd7.compareTo(bd8)
 
 ![exemplo-compareTo](src/resources/exemplo_compareTo.png)
+
+### Simulação de um caso real:
+
+
+Considerando uma conta corrente de banco, vamos instanciar nosso objeto ContaExemplo e realizar duas operações:
+
+1. Instanciando a conta:
+- ContaExemplo conta01 = new ContaExemplo(new BigDecimal("100.00"));
+- ContaExemplo conta02 = new ContaExemplo(new BigDecimal("50.00")); 
+
+2. Saque com subtract() e checagem com compareTo():
+
+![metodo-sacar()](src/resources/metodo_sacar.png)
+
+- conta01.sacar(BigDecimal.valueOf(20.37));
+- conta01.sacar(BigDecimal.valueOf(80.00));
+
+![exemplo-saque](src/resources/exemplo_saque.png)
+
+3. Simulação de um empréstimo com divisão das parcelas utilizando o divide():
+
+![metodo-emprestar](src/resources/metodo_emprestar.png)
+
+- conta01.emprestar(BigDecimal.valueOf(1000.00), 10);
+- conta01.getEmprestimoPessoal();
+
+![exemplo-emprestar](src/resources/exemplo_emprestar.png)
+
+

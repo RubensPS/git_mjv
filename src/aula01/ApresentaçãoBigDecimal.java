@@ -134,26 +134,38 @@ public class ApresentaçãoBigDecimal {
         System.out.println("---------------------------------------------------------------------------------------");
         scanner.nextLine();
 
+
+        // Exemplo: Utilizando um caso real. A classe ContaExemplo e suas operações:
+        ContaExemplo conta01 = new ContaExemplo(new BigDecimal("100.00"));
+        ContaExemplo conta02 = new ContaExemplo(new BigDecimal("50.00"));
+
+        //Saque utilizando o subtract() e o compareTo():
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("Saldo inicial conta01: " + conta01.getSaldo());
+        conta01.sacar(BigDecimal.valueOf(20.37));
+        System.out.println("Saldo após saque: " + conta01.getSaldo());
+        System.out.println("Tentativa de saque sem saldo suficiente:");
+        conta01.sacar(BigDecimal.valueOf(80.00));
+        System.out.println("---------------------------------------------------------------------------------------");
+
+        // Simulação de empréstimo utilizando o divide() para calculo das parcelas:
+        System.out.println("---------------------------------------------------------------------------------------");
+        conta01.emprestar(BigDecimal.valueOf(1000.00), 10);
+        conta01.getEmprestimoPessoal();
+        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("Saldo final após empréstimo: " + conta01.getSaldo());
+
         scanner.close();
     }
 
 
-    /*
-    OUTROS EXEMPLOS:
-    1) Soma sequencial com primitivos:
+
+    /*OUTROS EXEMPLOS:
+    //1) Soma sequencial com primitivos:
     Double total = 0d;
         for (int i=0 ; i<10 ; i++) {
             total += a;
         }
         System.out.println(total);
-
-    2) Utilizando um caso real. A classe ContaExemplo e suas operações:
-        ContaExemplo conta01 = new ContaExemplo(new BigDecimal("100.00"));
-        ContaExemplo conta02 = new ContaExemplo(new BigDecimal("50.00"));
-        System.out.println(conta01.getSaldo());
-        conta01.sacar(BigDecimal.valueOf(20.37));
-        System.out.println(conta01.getSaldo());
-
-     */
-
+    */
 }
